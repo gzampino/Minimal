@@ -1,9 +1,12 @@
 /* 
-01.General rules Section
-02.Navigation Section
-03.Slide Section
-04.About Section
-05.Team Section
+00.General rules Section
+01.Navigation Section
+	01.01.Mobile version - max-width: 992px
+	01.02.Desktop version - min-width: 992px
+02.Slide Section (slick plugin)
+03.About Section
+04.Team Section
+05.Team Members Biographies
 06.Purchase Section
 07.Services Section
 08.Brands Section
@@ -12,12 +15,11 @@
 11.Portfolio Section
 12.Contacts Section
 13.Footer Section
-14.Media query
+14.Key frames
+15.Media queries
+*/
 
-
- */
-
-/* 01.General rules Section */
+/* <<<<<<<<<<<< 00.General rules Section >>>>>>>>>>>> */
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
@@ -26,16 +28,23 @@ body {
 	box-sizing: border-box;
 }
 
+body * {
+	-webkit-font-smoothing: antialiased !important;
+	text-rendering: auto;
+}
+
 h1, h2, h3, h4, h5, h6, a {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
+	text-rendering: auto;
 }
 
 a, a:hover, a:active, a:focus {
 	text-decoration: none;
 }
+/* ============== 00.General rules Section ends ============== */
 
-/* 02.Navigation Section */
+/* <<<<<<<<<<<<<< 01.Navigation Section >>>>>>>>>>>>>>> */
 .navbar {
 	font-size: 12px;
 	font-weight: 700;
@@ -50,6 +59,7 @@ a, a:hover, a:active, a:focus {
 	transition: all 0.3s ease-in-out;
 }
 
+/* <<<<<<<<<<<<<<<<< 01.01.Mobile version - max-width: 992px >>>>>>>>>>>>>>>> */
 .navbar .navbar-header .navbar-toggle .icon-bar {
 	background-color: #000;
 }
@@ -57,7 +67,9 @@ a, a:hover, a:active, a:focus {
 .navbar .navbar-header .navbar-brand {
 	padding: 8px 0 10px 16px;
 }
+/* ================ 01.01.Mobile version - max-width: 992px ends ================= */
 
+/* <<<<<<<<<<<<<<< 01.02.Desktop version - min-width: 992px >>>>>>>>>>>>>>> */
 .navbar .nav > li > a {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -98,8 +110,10 @@ a, a:hover, a:active, a:focus {
 	background-color: transparent;
 	border: none;
 }
+/* ================ 01.02.Desktop version - min-width: 992px ends ================= */
+/* ================ 01.Navigation Section ends ================ */
 
-/* 03.Slide Section */
+/* <<<<<<<<<<<<<<< 02.Slide Section (slick plugin) >>>>>>>>>>>>>>>> */
 .slick-slider .item {
 	position: relative;
 	background-position: center center;
@@ -167,6 +181,11 @@ a, a:hover, a:active, a:focus {
 	transition: all 0.2s ease-in 0s;
 }
 
+.slick-slider .slick-arrow:hover {
+	color: #fff;
+	background-color: #0d4494;
+}
+
 .slick-slider .slick-arrow.slick-prev {
 	left: 0;
 	border-radius: 0 1px 1px 0;
@@ -201,8 +220,9 @@ a, a:hover, a:active, a:focus {
  	opacity: 1;
  	outline: none;
 }
+/* ================== 02.Slide Section (slick plugin) ends ================== */
 
-/* 04.About Section */
+/* <<<<<<<<<<<<<<<<<< 03.About Section >>>>>>>>>>>>>>>>>> */
 .about-section {
 	position: relative;
 }
@@ -257,19 +277,28 @@ a, a:hover, a:active, a:focus {
 .about-section .about-info .text p {
 	margin: 2em 0;
 }
+/* ================== 03.About Section ends ==================== */
 
-/* 05.Team Section */
+/* <<<<<<<<<<<<<<<< 04.Team Section >>>>>>>>>>>>>>>>> */
 .team-section {
+	overflow: hidden;
+	position: relative;
 	text-align: center;
 	background-color: #f5f7fa;
 	padding: 4em;
-	overflow: hidden;
+	transform: translateX(0);
+	transition: transform 0.3s;
+}
+
+.team-section.slide-out {
+	transform: translateX(-570px);
 }
 
 .team-section .team-container {
 	max-width: 1200px;
 	width: 90%;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .team-section h2 {
@@ -279,6 +308,11 @@ a, a:hover, a:active, a:focus {
 	text-transform: uppercase;
 	color: #1a2f2a;
 	margin-bottom: 2em;
+}
+
+.team-section .team-container ul {
+	list-style-type: none;
+	padding: 0;
 }
 
 .team-section .team-member {
@@ -291,7 +325,7 @@ a, a:hover, a:active, a:focus {
 	transition: all 0.3s;
 }
 
-.team-section .team-member:nth-child(4) {
+.team-section .team-member:nth-child(3) {
 	margin-right: 0;
 }
 
@@ -365,7 +399,150 @@ a, a:hover, a:active, a:focus {
 	margin-top: 0.55em;
 }
 
-/* 06.Purchase Section */
+.team-section .team-section-overlay {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(13, 68, 148, 0.7);
+	cursor: pointer;
+}
+
+.team-section.slide-out .team-section-overlay {
+	display: block;
+	animation: fade-in 0.3s;
+}
+/* ==================== 04.Team Section ends ================= */
+
+/* <<<<<<<<<<<<<< 05.Team Members Biographies >>>>>>>>>>>>>>>*/
+.member-bio {
+	overflow-y: auto;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	width: 570px;
+	height: 100%;
+	background-color: #fff;
+	transform: translateX(570px);
+	transition: transform 0.3s;
+}
+
+.member-bio.slide-in {
+	transform: translateX(0);
+}
+
+.member-bio .member-bio-img {
+	position: relative;
+}
+
+.member-bio .member-bio-img:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+	background-image: linear-gradient(-108deg, #3377de, #6222c6);
+}
+
+.member-bio .member-bio-img img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.member-bio .member-bio-content {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	padding: 2em;
+	transform: translateY(-80px);
+}
+
+.member-bio .member-bio-content h1 {
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #fff;
+	margin: 20px 0 15px;
+	padding-bottom: 30px;
+}
+
+.member-bio .member-bio-content span {
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	color: #0d4494;
+	margin: 1em 1.9em 0;
+}
+
+.member-bio .member-bio-content p {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 28px;
+	color: #5e5e5e;
+	margin: 1em 1.9em 0;
+	padding: 0 0 15px;
+}
+
+.member-bio .member-bio-content .social-net {
+	position: absolute;
+	font-size: 12px;
+	top: 80px;
+	left: 0;
+}
+
+.member-bio .member-bio-content .social-net a {
+	display: block;
+}
+
+.member-bio .member-bio-content .social-net a i {
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	border-bottom: 1px solid #333333;
+	transition: all 0.2s ease-in 0s;
+}
+
+.member-bio .member-bio-content .social-net a i:hover {
+	background: rgba(0, 0, 0, 0.85);
+}
+
+.member-bio-close {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	bottom: 30px;
+	right: 25px;
+}
+
+.member-bio-close.is-visible {
+	display: block;
+	animation: move-in 0.8s;
+}
+
+.member-bio-close i {
+	font-size: 25px;
+	color: #fff;
+	background-color: #000;
+	padding: 14px 17px;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+}
+
+.member-bio-close i:hover {
+	background-color: #0d4494;
+}
+/* =============== 05.Team Members Biographies ends ================ */
+
+/* <<<<<<<<<<<<<< 06.Purchase Section >>>>>>>>>>>>>>> */
 .purchase-section {
 	background: url('../img/buy-background.jpg') no-repeat bottom center fixed;
 	background-size: cover;
@@ -399,8 +576,9 @@ a, a:hover, a:active, a:focus {
 .purchase-section .btn-buy:hover {
 	background-color: rgba(13, 68, 148, 0.95);
 }
+/* ================= 06.Purchase Section ends ================= */
 
-/* 07.Services Section */
+/* <<<<<<<<<<<<<<<< 07.Services Section >>>>>>>>>>>>>>>> */
 .services-section {
 	position: relative;
 	color: #1a1a1a;
@@ -486,8 +664,9 @@ a, a:hover, a:active, a:focus {
 	background: url('../img/services-background.jpg') no-repeat center center;
 	background-size: cover;
 }
+/* ================= 07.Services Section ends ================== */
 
-/* 08.Brands Section */
+/* <<<<<<<<<<<<<<<< 08.Brands Section >>>>>>>>>>>>>>>>> */
 .brands-section {
 	background: url('../img/pattern.png') repeat 0 0;
 	text-align: center;
@@ -498,8 +677,9 @@ a, a:hover, a:active, a:focus {
 	max-width: 120px;
 	margin: 15px 0;
 }
+/* ================== 08.Brands Section ends ================= */
 
-/* 09.Pricing Section */
+/* <<<<<<<<<<<<<<<<< 09.Pricing Section >>>>>>>>>>>>>>>>> */
 .pricing-section {
 	position: relative;
 	text-align: center;
@@ -604,8 +784,9 @@ a, a:hover, a:active, a:focus {
 .pricing-section .pricing-pad .plan .sign-up:hover {
 	background-color: rgba(13, 68, 148, 0.8);
 }
+/* ================== 09.Pricing Section ends ================== */
 
-/* 10.Statistics Section */
+/* <<<<<<<<<<<<<<<<<< 10.Statistics Section >>>>>>>>>>>>>>>> */
 .stats-section {
 	background: url('../img/pattern.png') repeat 0 0;
 	text-align: center;
@@ -636,8 +817,9 @@ a, a:hover, a:active, a:focus {
 	font-weight: 400;
 	letter-spacing: 0.7px;
 }
+/* ================= 10.Statistics Section ends ================= */
 
-/* 11.Portfolio Section */
+/* <<<<<<<<<<<<<<<< 11.Portfolio Section >>>>>>>>>>>>>>>> */
 .portfolio-section {
 	text-align: center;
 	color: #1a1a1a;
@@ -782,9 +964,10 @@ a, a:hover, a:active, a:focus {
 	font-weight: 700;
 	letter-spacing: 1px;
 	margin: 0;
-	}
+}
+/* ================== 11.Portfolio Section ends ================== */
 
-/* 12.Contacts Section */
+/* <<<<<<<<<<<<<<<<<< 12.Contacts Section >>>>>>>>>>>>>>>>>> */
 .contacts-section {
 	padding: 50px 0 100px;
 }
@@ -949,8 +1132,9 @@ input[type="submit"] {
 .behance i {
 	background-color: #131418;
 }
+/* =================== 12.Contacts Section ends ================= */
 
-/* 13.Footer Section */
+/* <<<<<<<<<<<<<<<<<< 13.Footer Section >>>>>>>>>>>>>>>>>> */
 .footer {
 	width: 100%;
 	text-align: center;
@@ -969,21 +1153,42 @@ input[type="submit"] {
 .footer .copyright a {
 	color: #000;
 }
+/* =================== 13.Footer Section ends ================= */
 
-/* 14.Media queries */
+/* <<<<<<<<<<<<<<<<<<< 14.Key frames >>>>>>>>>>>>>>>>>>> */
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes move-in {
+	0% {
+		transform: translateX(100px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+/* =================== 14.Key frames ends ================= */
+
+/* <<<<<<<<<<<<<<<<<< 15.Media queries >>>>>>>>>>>>>>>>>> */
 @media screen and (max-width: 1200px) {
 
-	/* 04.About Section */
+/* 04.About Section */
 	.about-section .about-pad {
 		padding: 100px 0 100px 20px;
 	}
 
-	/* 05.Team Section */
+/* 05.Team Section */
 	.team-section h2 {
 		margin-bottom: 1em;
 	}
 
-	/* 09.pricing-section */
+/* 09.pricing-section */
 	.pricing-section .pricing-pad {
 		padding: 100px 0 100px 10px;
 	}
@@ -991,7 +1196,7 @@ input[type="submit"] {
 
 @media screen and (max-width: 992px) {
 
-	/* 02.Navigation Section */
+/* 02.Navigation Section */
 	.navbar {
 		margin: 0;
 	}
@@ -1030,17 +1235,17 @@ input[type="submit"] {
 		text-align: center;
 	}
 
-	/* 04.About Section */
+/* 04.About Section */
 	.about-section .about-pad {
 		padding: 100px 32px 100px;
 	}
 
-	/* 07.Services Section */
+/* 07.Services Section */
 	.services-section .services-content .services-pad {
 		margin: 100px 100px 80px 12px;
 	}
 
-	/* 09.pricing-section */
+/* 09.pricing-section */
 	.pricing-section .pricing-pad {
 		padding: 100px 0 100px 30px;
 	}
@@ -1051,14 +1256,26 @@ input[type="submit"] {
 
 @media screen and (max-width: 768px) {
 	
- /* 05.Team Section */
+/* 05.Team Section */
 	.team-section {
  		padding: 2em 0;
 	}
- .team-section .team-member {
+	.team-section.slide-out {
+		transform: translateX(-320px);
+	}
+  	.team-section .team-member {
 	 	float: none;
 	 	width: 100%;
 	 	margin-right: 0;
+	}
+
+/* 05.01.Team Members Biographies */
+	.member-bio {
+		width: 320px;
+		transform: translateX(320px);
+	}
+	.member-bio .member-bio-content {
+		padding: 2.5em 3em;
 	}
 
  /* 07.Services Section */
@@ -1069,7 +1286,7 @@ input[type="submit"] {
 
 @media screen and (max-width: 602px) {
 	
-	/* 11.Portfolio Section */
+/* 11.Portfolio Section */
 	.portfolio-section .filtr-item {
 		float: none;
 		width: 100%;
@@ -1078,7 +1295,7 @@ input[type="submit"] {
 
 @media screen and (max-width: 576px) {
 	
-	/* 12.Contacts Section */
+/* 12.Contacts Section */
 	.contacts-section .social-net a {
 		margin: 0 8px;
 	}
@@ -1093,8 +1310,9 @@ input[type="submit"] {
 
 @media screen and (max-width: 480px) {
 
-	/* 07.Services Section */
+/* 07.Services Section */
 	.services-section .services-content .services-pad {
 		margin: 100px 65px 80px 12px;
 	}
 }
+/* ================= 15.Media queries end s================== */

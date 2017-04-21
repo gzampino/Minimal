@@ -34,6 +34,7 @@
 	<!-- Navigation Section -->
 	<nav class="navbar navbar-fixed-top">
 		<div class="container">
+
 			<!-- Mobile Version - max-width: 992px -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,6 +47,7 @@
 					<img src="assets/img/mnml-logo.png" alt="Minimal Portfolio Theme">
 				</a>
 			</div> <!-- Mobile Version ends -->
+
 			<!-- Desktop Version - min-width: 992px -->
 			<div id="myNavbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -76,39 +78,49 @@
 					</li>
 				</ul>
 			</div> <!-- Desktop Version ends -->
+
 		</div>
 	</nav> <!-- Navigation Section ends -->
 	
 	<!-- Slide Section -->
 	<section id="slide">
 		<div class="slick-slider">
+
+			<!-- First item -->
 			<div class="item first">
 				<div class="contain">
 					<div class="top-text">Design without limit</div>
 					<div class="bottom-text">Minimal</div>
 				</div>
-			</div>
+			</div> <!-- First item ends -->
+
+			<!-- Second item -->
 			<div class="item second">
 				<div class="contain">
 					<div class="top-text">Minimal design is simple</div>
 					<div class="bottom-text">Minimal</div>
 				</div>
-			</div>
+			</div> <!-- Second item ends -->
+
+			<!-- Third item -->
 			<div class="item third">
 				<div class="contain">
 					<div class="top-text">Minimal design is clean</div>
 					<div class="bottom-text">Minimal</div>
 				</div>
-			</div>
+			</div> <!-- Third item ends -->
+
 		</div>
 	</section> <!-- Slide Section ends -->
 
 	<!-- About Section -->
 	<section id="about" class="about-section">
+
 		<!-- Background Image -->
 		<div class="image-container col-lg-6 col-md-5 col-sm-3">
 			<div class="about-bg-image-holder"></div>
 		</div> <!-- Background Image ends -->
+
 		<!-- About Description -->
 		<div class="container">
 			<div class="row animated bounceInUp wow" data-wow-delay="400" data-wow-duration="2s">
@@ -125,53 +137,128 @@
 				</div>
 			</div>
 		</div> <!-- About Description ends -->
+
 	</section> <!-- About Section ends -->
 
 	<!-- Team Section -->
 	<section id="team" class="team-section">
+
 		<div class="team-container">
 			<h2>Our team</h2>
-			<!-- First Team Member -->
-			<div class="team-member">
-				<div class="member-img">
-					<img src="assets/img/alice-price-avatar.jpg" alt="member image">
-					<div class="bg-img-overlay">
-						<h5>View bio</h5>
-					</div>
-				</div>
-				<div class="member-info">
-					<h4>Alice Price</h4>
-					<span>Marketing</span>
-				</div>
-			</div> <!-- First Team Member Ends -->
-			<!-- Second Team Member -->
-			<div class="team-member">
-				<div class="member-img">
-					<img src="assets/img/frederick-miller-avatar.jpg" alt="member image">
-					<div class="bg-img-overlay">
-						<h5>View bio</h5>
-					</div>
-				</div>
-				<div class="member-info">
-					<h4>Frederick Miller</h4>
-					<span>Web design</span>
-				</div>
-			</div> <!-- Second Team Member Ends -->
-			<!-- Third Team Member -->
-			<div class="team-member">
-				<div class="member-img">
-					<img src="assets/img/max-powell-avatar.jpg" alt="member image">
-					<div class="bg-img-overlay">
-						<h5>View bio</h5>
-					</div>
-				</div>
-				<div class="member-info">
-					<h4>Max Powell</h4>
-					<span>Ceo</span>
-				</div>
-			</div> <!-- Third Team Member Ends -->
+			<ul>
+
+				<!-- First Team Member -->
+				<li class="team-member">
+					<a href="#1" class="clickable-cd" data-type="member-1">
+						<div class="member-img">
+							<img src="assets/img/alice-price-avatar.jpg" alt="member image">
+							<div class="bg-img-overlay">
+								<h5>View bio</h5>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Alice Price</h4>
+							<span>Marketing</span>
+						</div>
+					</a>
+				</li> <!-- First Team Member Ends -->
+
+				<!-- Second Team Member -->
+				<li class="team-member">
+					<a href="#2" class="clickable-cd" data-type="member-2">
+						<div class="member-img">
+							<img src="assets/img/frederick-miller-avatar.jpg" alt="member image">
+							<div class="bg-img-overlay">
+								<h5>View bio</h5>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Frederick Miller</h4>
+							<span>Web design</span>
+						</div>
+					</a>
+				</li> <!-- Second Team Member Ends -->
+
+				<!-- Third Team Member -->
+				<li class="team-member">
+					<a href="#3" class="clickable-cd" data-type="member-3">
+						<div class="member-img">
+							<img src="assets/img/max-powell-avatar.jpg" alt="member image">
+							<div class="bg-img-overlay">
+								<h5>View bio</h5>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Max Powell</h4>
+							<span>Ceo</span>
+						</div>
+					</a>
+				</li> <!-- Third Team Member Ends -->
+
+			</ul>
 		</div>
+
+		<div class="team-section-overlay"></div>
+
 	</section> <!-- Team Section Ends -->
+
+	<!-- Team Members Biographies -->
+	<!-- First bio -->
+	<div class="member-bio member-1">
+		<div class="member-bio-img">
+			<img src="assets/img/alice-price.jpg" alt="member-bio image">
+		</div>
+		<div class="member-bio-content">
+			<h1>Alice Price</h1>
+			<span>Marketing</span>
+			<p>Phasellus ultrices elit a nibh porttitor accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex turpis, tincidunt id libero nec, ultrices ultrices eros. Nulla sagittis, est ac laoreet ultrices, lacus mauris interdum purus, eu dictum risus arcu gravida justo.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, pariatur illum. Maecenas molestie condimentum.</p>
+			<div class="social-net">
+				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</div> <!-- First bio ends -->
+
+	<!-- Second bio -->
+	<div class="member-bio member-2">
+		<div class="member-bio-img">
+			<img src="assets/img/frederick-miller.jpg" alt="member-bio image">
+		</div>
+		<div class="member-bio-content">
+			<h1>Frederick Miller</h1>
+			<span>Web design</span>
+			<p>Phasellus ultrices elit a nibh porttitor accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex turpis, tincidunt id libero nec, ultrices ultrices eros. Nulla sagittis, est ac laoreet ultrices, lacus mauris interdum purus, eu dictum risus arcu gravida justo.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, pariatur illum. Maecenas molestie condimentum.</p>
+			<div class="social-net">
+				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</div> <!-- Second bio ends -->
+
+	<!-- Third bio -->
+	<div class="member-bio member-3">
+		<div class="member-bio-img">
+			<img src="assets/img/max-powell.jpg" alt="member-bio image">
+		</div>
+		<div class="member-bio-content">
+			<h1>Max Powell</h1>
+			<span>Ceo</span>
+			<p>Phasellus ultrices elit a nibh porttitor accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex turpis, tincidunt id libero nec, ultrices ultrices eros. Nulla sagittis, est ac laoreet ultrices, lacus mauris interdum purus, eu dictum risus arcu gravida justo.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, pariatur illum. Maecenas molestie condimentum.</p>
+			<div class="social-net">
+				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</div> <!-- Third bio ends -->
+
+	<!-- Close button for members-bio -->
+	<a href="#" class="member-bio-close"><i class="fa fa-close" aria-hidden="true"></i></a>
 
 	<!-- Purchase Section -->
 	<section class="purchase-section">
@@ -185,6 +272,7 @@
 
 	<!-- Services Section -->
 	<section id="services" class="services-section">
+
 		<!-- Services Description -->
 		<div class="container">
 			<div class="row animated bounceInUp wow" data-wow-delay="400" data-wow-duration="2s">
@@ -217,10 +305,12 @@
 				</div>
 			</div>
 		</div> <!-- Services Description ends -->
+
 		<!-- Background Image -->
 		<div class="image-container col-lg-6 col-md-5 col-sm-3 pull-right">
 			<div class="services-bg-img-holder"></div>
 		</div> <!-- Background Image ends -->
+
 	</section> <!-- Services Section ends -->
 
 	<!-- Brands Section -->
@@ -245,16 +335,19 @@
 
 	<!-- Pricing Section -->
 	<section id="pricing" class="pricing-section">
+
 		<!-- Background Image -->
 		<div class="image-container col-lg-6 col-md-5 col-sm-3">
 			<div class="pricing-bg-image-holder"></div>
 		</div> <!-- Background Image ends -->
+
 		<!-- Pricing Description -->
 		<div class="container">
 			<div class="row animated bounceInUp wow" data-wow-delay="400" data-wow-duration="2s">
 				<div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4 pricing-pad">
 					<h2>Pricing</h2>
 					<div class="plan">
+
 						<!-- First plan -->
 						<div class="name-plan">Standard</div>
 						<div class="tarif-plan">19<span>$</span></div>
@@ -265,6 +358,7 @@
 							<p>Remote support</p>
 						</div>
 						<a href="#" class="sign-up">Sign up</a>
+
 						<!-- Second plan -->
 						<div class="name-plan">Advanced</div>
 						<div class="tarif-plan active">39<span>$</span></div>
@@ -275,6 +369,7 @@
 							<p>Remote support</p>
 						</div>
 						<a href="#" class="sign-up">Sign up</a>
+
 						<!-- Third plan -->
 						<div class="name-plan">Premium</div>
 						<div class="tarif-plan">69<span>$</span></div>
@@ -285,10 +380,12 @@
 							<p>Remote support</p>
 						</div>
 						<a href="#" class="sign-up">Sign up</a>
+
 					</div>
 				</div>
 			</div>
 		</div> <!-- Pricing Description ends -->
+
 	</section> <!-- Pricing Section ends -->
 
 	<!-- Statistics Section -->
@@ -323,6 +420,7 @@
 			<div class="row">
 				<h2>Portfolio</h2>
 				<div class="wrapper">
+
 					<!-- Filter Controls -->
 					<ul id="filtr-container" class="filtr-controls">
 						<li data-filter="all" class="active">Show all
@@ -338,8 +436,10 @@
 							<div class="filtr-counter">3</div>
 						</li>
 					</ul> <!-- Filter Controls ends -->
+
 					<!-- Dynamic Grid -->
 					<div class="filtr-container">
+
 						<!-- First project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="1">
 							<div class="project-wrapper">
@@ -352,6 +452,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Second project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2">
 							<div class="project-wrapper">
@@ -364,6 +465,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Third project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="1, 2">
 							<div class="project-wrapper">
@@ -376,6 +478,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Fourth project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2, 3">
 							<div class="project-wrapper">
@@ -388,6 +491,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Fifth project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2">
 							<div class="project-wrapper">
@@ -400,6 +504,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Sixth project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="1, 3">
 							<div class="project-wrapper">
@@ -412,6 +517,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Seventh project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2, 3">
 							<div class="project-wrapper">
@@ -424,6 +530,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Eight project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2">
 							<div class="project-wrapper">
@@ -436,6 +543,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Ninth project -->
 						<div class="filtr-item col-lg-4 col-xs-6" data-category="2">
 							<div class="project-wrapper">
@@ -448,7 +556,9 @@
 								</div>
 							</div>
 						</div>
+
 					</div> <!-- Dynamic Grid ends -->
+
 				</div> <!-- Wrapper ends -->
 			</div>
 		</div>
@@ -459,6 +569,7 @@
 		<div class="container animated bounceInUp wow" data-wow-delay="150">
 			<h2>Contact</h2>
 			<div class="row">
+
 				<!-- Input Section -->
 				<div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
 					<form method="post" class="contactform" novalidate="novalidate">
@@ -477,6 +588,7 @@
 						</p>
 					</form>
 				</div> <!-- Input Section ends -->
+
 				<!-- Contacts Information Section -->
 				<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
 					<div class="contacts-details">
@@ -502,6 +614,7 @@
 						</a>
 					</div>
 				</div> <!-- Contacts Information Section ends -->
+				
 			</div>
 		</div>
 	</section> <!-- Contacts Section ends -->
