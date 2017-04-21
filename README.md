@@ -1,2 +1,2 @@
 # Minimal
-Minimal - One page template
+Minimal - One page template website replication
